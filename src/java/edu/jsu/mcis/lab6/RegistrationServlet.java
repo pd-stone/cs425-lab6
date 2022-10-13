@@ -55,6 +55,8 @@ public class RegistrationServlet extends HttpServlet {
         
         if (context .getAttribute("daoFactory") == null) {
             
+            // test change for example
+            
         }
     }
     
