@@ -4,9 +4,33 @@
         <servlet-name>RegistrationServlet</servlet-name>
         <servlet-class>edu.jsu.mcis.lab6.RegistrationServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>TrainingSessionServlet</servlet-name>
+        <servlet-class>edu.jsu.mcis.lab6.TrainingSessionServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TrainingSessionServerlet</servlet-name>
+        <servlet-class>edu.jsu.mcis.lab6.TrainingSessionServerlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Attendees</servlet-name>
+        <servlet-class>edu.jsu.mcis.lab6.AttendeesServerlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegistrationServlet</servlet-name>
         <url-pattern>/registrations</url-pattern>
+    </servlet-mapping>
+    <servlet-mmapping>
+        <servlet-name>TrainingSessionsServlet</servlet-name>
+        <url-pattern>/trainingsessions</url-pattern>
+    </servlet-mmapping>
+    <servlet-mapping>
+        <servlet-name>TrainingSessionServerlet</servlet-name>
+        <url-pattern>/TrainingSessionServerlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Attendees</servlet-name>
+        <url-pattern>/Attendees</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -46,13 +46,12 @@ public class DAOFactory {
     public RegistrationDAO getRegistrationDAO() {
         return new RegistrationDAO(this);
     }
-/*
     
-    public attendeesDAO getAttendeesDAO(){
+    public AttendeesDAO getAttendeesDAO(){
         return new AttendeesDAO(this);
     }
-    public TrainingSessions trainingSessionsDAO(){
-        return new getTrainingSessionsDAO(this);
+    public TrainingSessionsDAO getTrainingSessionsDAO(){
+        return new TrainingSessionsDAO(this);
     }
-   */ 
+   
 }
