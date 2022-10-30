@@ -128,14 +128,7 @@ public class RegistrationDAO {
         }
         return JSONValue.toJSONString(json);
     }
-    /**
-     * 
-     * @param sessionid_old
-     * @param attendeeid_old
-     * @param sessionid_updated
-     * @param attendeeid_updated
-     * @return
-     */
+   
     public String update(int sessionid_old, int attendeeid_old, int sessionid_updated, int attendeeid_updated) {
         JSONObject json = new JSONObject();
 
@@ -191,7 +184,6 @@ public class RegistrationDAO {
         json.put("success", false);
         PreparedStatement ps = null;
         ResultSet rs = null;
-
         try {
             Connection conn = daoFactory.getConnection();
 
@@ -206,7 +198,6 @@ public class RegistrationDAO {
                 json.put("rowsAffected", updateCount);
 
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }

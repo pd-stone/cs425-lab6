@@ -5,8 +5,11 @@
         <group>
             <file>file:/C:/Users/PD/Documents/NetBeansProjects/cs425-lab6/src/java/edu/jsu/mcis/lab6/RegistrationServlet.java</file>
             <file>file:/C:/Users/PD/Documents/NetBeansProjects/cs425-lab6/src/java/edu/jsu/mcis/lab6/dao/DAOFactory.java</file>
+            <file>file:/C:/Users/PD/Documents/NetBeansProjects/cs425-lab6/src/java/edu/jsu/mcis/lab6/dao/AttendeesDAO.java</file>
+            <file>file:/C:/Users/PD/Documents/NetBeansProjects/cs425-lab6/src/java/edu/jsu/mcis/lab6/TrainingSessionServerlet.java</file>
+            <file>file:/C:/Users/PD/Documents/NetBeansProjects/cs425-lab6/src/java/edu/jsu/mcis/lab6/dao/TrainingSessionsDAO.java</file>
+            <file>file:/C:/Users/PD/Documents/NetBeansProjects/cs425-lab6/src/java/edu/jsu/mcis/lab6/AttendeesServerlet.java</file>
             <file>file:/C:/Users/PD/Documents/NetBeansProjects/cs425-lab6/src/java/edu/jsu/mcis/lab6/dao/RegistrationDAO.java</file>
-            <file>file:/C:/Users/PD/Documents/NetBeansProjects/cs425-lab6/web/index.html</file>
         </group>
     </open-files>
 </project-private>

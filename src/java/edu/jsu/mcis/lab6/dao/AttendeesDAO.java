@@ -18,18 +18,7 @@ public class AttendeesDAO {
         AttendeesDAO(DAOFactory dao) {
                 this.daoFactory = dao;
         }
-
-        /*
-         * ------------------------Public Methods---------------------------
-         */
-
-        /**
-         * retrieve the profile information for an attendee (that is, the attendee's
-         * first name, last name, and display name),
-         * 
-         * @param attendeeid
-         * @return
-         */
+        
         public String find(int attendeeid) {
                 JSONObject json = new JSONObject();
                 json.put("success", false);
@@ -95,23 +84,7 @@ public class AttendeesDAO {
                 return JSONValue.toJSONString(json);
         }
 
-        /**
-         * Updates information on existing attendee
-         * 
-         * @param attendeeid
-         * @return
-         */
-        /*
-         * public String update(int attendeeid) {
-         * 
-         * }
-         */
-        /**
-         * Adds a new Attendee
-         * 
-         * @param attendee
-         * @return
-         */
+     
         public String create(String firstname, String lastname, String displayname) {
                 JSONObject json = new JSONObject();
 
@@ -160,21 +133,6 @@ public class AttendeesDAO {
                 return JSONValue.toJSONString(json);
         }
 
-        /*
-         * ------------------------Private Methods---------------------------
-         */
-
-        /**
-         * Returns 6 digit registation code based on attendees unique id
-         * Attendees who have been registered for a session should be given a six-digit
-         * registration code,
-         * based on their unique ID, which begins with the letter "R"; for example,
-         * if an attendee is registered whose ID has a value of 76, the registration
-         * number should be "R000076".
-         * 
-         * @param attendeeid
-         * @return
-         */
 
         private String getRegistrationNumberByAttendeeID(int attendeeid) {
 
@@ -232,5 +190,57 @@ public class AttendeesDAO {
 
                 }
                 return result;
+        }
+        public String update(int id, String firstname, String lastname, String displayname) {
+                                    System.err.println("--------------got to into update function");
+   
+            JSONObject json = new JSONObject();
+
+                json.put("success", false);
+                PreparedStatement ps = null;
+                ResultSet rs = null;
+
+                try {
+                        Connection conn = daoFactory.getConnection();
+
+                        ps = conn.prepareStatement(QUERY_UPDATE);
+                        ps.setInt(4, id);
+                        ps.setString(1, firstname);
+                        ps.setString(2, lastname);
+                        ps.setString(3, displayname);
+                        
+                        System.err.println("--------------got to before ps.execute()");
+
+                        int updateCount = ps.executeUpdate();
+
+                        if (updateCount > 0) {
+                                json.put("success", true);
+                                json.put("rowsAffected", updateCount);
+
+                        }
+
+                } catch (Exception e) {
+                        e.printStackTrace();
+                }
+
+                finally {
+
+                        if (rs != null) {
+                                try {
+                                        rs.close();
+                                } catch (Exception e) {
+                                        e.printStackTrace();
+                                }
+                        }
+                        if (ps != null) {
+                                try {
+                                        ps.close();
+                                } catch (Exception e) {
+                                        e.printStackTrace();
+                                }
+                        }
+
+                }
+                return JSONValue.toJSONString(json);
         }
 }
